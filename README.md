@@ -21,7 +21,7 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
    - ```git clone https://github.com/wong-ja/CareerCheer.git```
 3. Build & run on (Gradle sync) an Android device or emulator 
    - Android 8.0+ (API 26+) needed
-4. On first run, sample data will be inserted automatically
+4. On each run, sample data will be inserted automatically
 5. You can add, delete and/or modify applications on this app as needed!
 
 ## Brief on Project Structure
@@ -42,6 +42,8 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 - Filter applications by status
 - Storage on physical device (Room, offline storage)
 
+![CareerCheer](CareerCheer.gif)
+
 ## Future Features To Implement
 
 - [ ] Add date selection for application stages -- better for tracking deadlines
@@ -49,6 +51,11 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 - [ ] Add notifications/reminders for upcoming application stages (eg. TechnicalInterview)
 - [ ] Calender support/sync across devices (cloud)
 - [ ] ...
+
+## Relevant Links
+
+- [Project Slides](https://docs.google.com/presentation/d/1cGz08eMRJCVz6jznCAByW_RDRnLS2P0OPy6Wf_bHAlo/edit?usp=sharing)
+- [Devpost Submission](https://devpost.com/software/careercheer)
 
 ## Team Pixel Python!
 
