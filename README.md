@@ -1,8 +1,10 @@
 # CareerCheer
 
-CareerCheer is a simple, user-friendly Android app designed to help students track their internship and job hunt progress through the application stages.
+CareerCheer is a simple, user-friendly Android app designed to help students track their internship and job hunting progress through the application stages.
 
 **Focus**: Tech Career Track
+
+<img src="./Cheer.png" alt="App Logo" height="150"/>
 
 ## Tech Stack
 
@@ -24,10 +26,10 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 
 ## Brief on Project Structure
 
-- `/data` -- Room, objects, interface to database/data/logic (in device storage)
-- `/viewmodel` -- ViewModels for interation between UI-data, flows, queries, updates to db
-- `/ui`-- -- UI/app/screen components (eg. application form, full application list, etc.)
-- `/ui/theme` -- adapts Material 3 themes/colors, 
+- `/CareerCheer/app/src/main/java/com/example/careercheer/data` -- Room, objects, interface to database/data/logic (in device storage)
+- `/CareerCheer/app/src/main/java/com/example/careercheer/viewmodel` -- ViewModels for interation between UI-data, flows, queries, updates to db
+- `/CareerCheer/app/src/main/java/com/example/careercheer/ui`-- -- UI/app/screen components (eg. application form, full application list, etc.)
+- `/CareerCheer/app/src/main/java/com/example/careercheer/ui/theme` -- adapts Material 3 themes/colors, 
 
 ## Usage & Features
 
