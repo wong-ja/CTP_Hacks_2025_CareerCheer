@@ -5,15 +5,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import com.example.careercheer.data.ApplicationStatus
 
-val Orange = Color(0xFFFFCC80)
-val Blue = Color(0xFF90CAF9)
-val Pink = Color(0xFFEF9A9A)
-val Green = Color(0xFFA5D6A7)
-val Yellow = Color(0xFFFFEB3B)
+val Orange = Color(0xFFEFA43C)
+val Blue = Color(0xFF72B8F1)
+val Pink = Color(0xFFEF78CE)
+val Green = Color(0xFF86DC8A)
+val Yellow = Color(0xFFDECA0F)
 val Red = Color(0xFFFF4763)
 val Purple = Color(0xFFCE93D8)
 val Teal = Color(0xFF79BAEC)
-val LightGray = Color(0xFFBDBDBD)
+val LightGray = Color(0xFF9F9E9E)
 
 private val LightColorScheme = lightColorScheme(
     primary = Blue,

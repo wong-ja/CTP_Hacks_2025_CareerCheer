@@ -16,7 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.HorizontalDivider
+//import androidx.compose.foundation.lazy.items
 import com.example.careercheer.data.Application
 import com.example.careercheer.data.ApplicationStatus
 import com.example.careercheer.ui.theme.CareerCheerTheme
@@ -90,7 +91,7 @@ fun ApplicationListScreen(
                             label = { Text("All") }
                         )
                     }
-                    items(ApplicationStatus.values()) { status ->
+                    items(ApplicationStatus.entries.toTypedArray()) { status ->
                         FilterChip(
                             selected = selectedFilter == status,
                             onClick = {
@@ -98,11 +99,11 @@ fun ApplicationListScreen(
                                 onFilterChange(status)
                             },
                             colors = FilterChipDefaults.filterChipColors(
-                                containerColor = StatusColorMap[status]?.copy(alpha = 0.3f)
+                                containerColor = StatusColorMap[status]?.copy(alpha = 0.2f)
                                     ?: MaterialTheme.colorScheme.primary,
                                 labelColor = StatusColorMap[status] ?: MaterialTheme.colorScheme.onPrimary
                             ),
-                            label = { Text(status.name, maxLines = 1, overflow = TextOverflow.Ellipsis) }
+                            label = { Text(status.name.split("(?<!^)(?=[A-Z])".toRegex()).first(), maxLines = 1, overflow = TextOverflow.Ellipsis) }
                         )
                     }
                 }
@@ -124,7 +125,11 @@ fun ApplicationListScreen(
                                 onEditClick = onEditClick,
                                 onDeleteClick = onDeleteClick
                             )
-                            Divider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f))
+                            HorizontalDivider(
+                                Modifier,
+                                DividerDefaults.Thickness,
+                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)
+                            )
                         }
                     }
                 }
