@@ -59,6 +59,7 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 
 - [Project Slides](https://docs.google.com/presentation/d/1cGz08eMRJCVz6jznCAByW_RDRnLS2P0OPy6Wf_bHAlo/edit?usp=sharing)
 - [Devpost Submission](https://devpost.com/software/careercheer)
+- [YouTube - Install & Run](https://youtu.be/NJxoO6fF3C4)
 
 ## Team Pixel Python!
 
