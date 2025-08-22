@@ -42,7 +42,7 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 - Filter applications by status
 - Storage on physical device (Room, offline storage)
 
-![CareerCheer](CareerCheer.gif)
+<img src='https://github.com/wong-ja/CareerCheer/blob/main/CareerCheer.gif' title='Video Demo' width='300' alt='Video Demo' />
 
 ## Future Features To Implement
 
