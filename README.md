@@ -16,13 +16,16 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 
 ## Setup and Running
 
-1. Open Android Studio
+1. Open Android Studio (eg. Narwhal 25.1.2)
 2. Clone repository
-   - ```git clone https://github.com/wong-ja/CareerCheer.git```
-3. Build & run on (Gradle sync) an Android device or emulator 
+   - git clone ```https://github.com/wong-ja/CareerCheer.git```
+3. Build (Gradle sync) & Run 'app' on an Android device or emulator
+   - __Note__: upon first Gradle sync, may take a few mins
    - Android 8.0+ (API 26+) needed
+   - eg. Android 16.0 ("Baklava") (API 36.0)
 4. On each run, sample data will be inserted automatically
-5. You can add, delete and/or modify applications on this app as needed!
+   - __Note__: existing data is from previous runs
+6. You can add, delete and/or modify applications on this app as needed!
 
 ## Brief on Project Structure
 
