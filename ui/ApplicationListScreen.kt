@@ -15,6 +15,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import com.example.careercheer.data.Application
 import com.example.careercheer.data.ApplicationStatus
 import com.example.careercheer.ui.theme.CareerCheerTheme
@@ -39,7 +41,7 @@ fun ApplicationListScreen(
         Scaffold(
             topBar = {
                 SmallTopAppBar(
-                    title = { Text("CareerCheer - Applications") },
+                    title = { Text("Application Dashboard") },
                     actions = {
                         IconButton(onClick = { /* TODO: search/filter dialog/focus functionality */ }) {
                             Icon(Icons.Default.Search, contentDescription = "Search")
@@ -74,17 +76,21 @@ fun ApplicationListScreen(
                 )
 
                 // filter applciation status
-                Row(Modifier.padding(8.dp)) {
-                    FilterChip(
-                        selected = selectedFilter == null,
-                        onClick = {
-                            selectedFilter = null
-                            onFilterChange(null)
-                        },
-                        modifier = Modifier.padding(end = 4.dp),
-                        label = { Text("All") }
-                    )
-                    ApplicationStatus.values().forEach { status ->
+                LazyRow(Modifier.padding(
+                    horizontal = 8.dp, vertical = 4.dp).fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    item {
+                        FilterChip(
+                            selected = selectedFilter == null,
+                            onClick = {
+                                selectedFilter = null
+                                onFilterChange(null)
+                            },
+                            label = { Text("All") }
+                        )
+                    }
+                    items(ApplicationStatus.values()) { status ->
                         FilterChip(
                             selected = selectedFilter == status,
                             onClick = {
@@ -94,11 +100,9 @@ fun ApplicationListScreen(
                             colors = FilterChipDefaults.filterChipColors(
                                 containerColor = StatusColorMap[status]?.copy(alpha = 0.3f)
                                     ?: MaterialTheme.colorScheme.primary,
-                                labelColor = StatusColorMap[status]?.copy(alpha = 1f)
-                                    ?: MaterialTheme.colorScheme.onPrimary
+                                labelColor = StatusColorMap[status] ?: MaterialTheme.colorScheme.onPrimary
                             ),
-                            modifier = Modifier.padding(end = 4.dp),
-                            label = { Text(status.name) }
+                            label = { Text(status.name, maxLines = 1, overflow = TextOverflow.Ellipsis) }
                         )
                     }
                 }
@@ -193,13 +197,14 @@ fun ApplicationItem(
             }
         }
         Spacer(Modifier.width(12.dp))
-        // Status with colored indicator
+        // Application status with color indicator (box)
         Box(
             Modifier
                 .size(24.dp)
                 .background(statusColor, shape = MaterialTheme.shapes.small)
         )
         Spacer(Modifier.width(12.dp))
+        // Delete application (trashcan)
         IconButton(onClick = { onDeleteClick(application) }) {
             Icon(
                 imageVector = Icons.Default.Delete,

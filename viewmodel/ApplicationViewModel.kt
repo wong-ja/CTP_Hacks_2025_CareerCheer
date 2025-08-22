@@ -73,18 +73,18 @@ class ApplicationViewModel(private val repository: ApplicationRepository) : View
         viewModelScope.launch {
             val sampleApps = listOf(
                 Application(
-                    title = "Test Developer",
-                    company = "Test Company",
+                    title = "Software Developer Intern",
+                    company = "Company A",
                     applicationDate = System.currentTimeMillis(),
                     status = ApplicationStatus.Applied,
-                    notes = "Sample notes"
+                    notes = "Company values, benefits, culture is good."
                 ),
                 Application(
                     title = "Frontend Engineer",
-                    company = "Example Corp",
+                    company = "B Corp",
                     applicationDate = System.currentTimeMillis() - 86400000L,
                     status = ApplicationStatus.TechnicalInterview,
-                    notes = "Second round interview"
+                    notes = "Second round interview is Onsite/Whiteboard"
                 )
             )
             sampleApps.forEach { repository.insertApplication(it) }
