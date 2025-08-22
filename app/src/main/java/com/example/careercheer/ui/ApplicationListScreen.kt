@@ -15,7 +15,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.lazy.LazyRow
+//import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.material3.HorizontalDivider
 //import androidx.compose.foundation.lazy.items
 import com.example.careercheer.data.Application
@@ -25,7 +26,7 @@ import com.example.careercheer.ui.theme.StatusColorMap
 import java.text.SimpleDateFormat
 import java.util.*
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun ApplicationListScreen(
     applications: List<Application>,
@@ -42,7 +43,7 @@ fun ApplicationListScreen(
         Scaffold(
             topBar = {
                 SmallTopAppBar(
-                    title = { Text("Application Dashboard") },
+                    title = { Text("CareerCheer Dashboard") },
                     actions = {
                         IconButton(onClick = { /* TODO: search/filter dialog/focus functionality */ }) {
                             Icon(Icons.Default.Search, contentDescription = "Search")
@@ -76,22 +77,19 @@ fun ApplicationListScreen(
                         .padding(8.dp)
                 )
 
-                // filter applciation status
-                LazyRow(Modifier.padding(
-                    horizontal = 8.dp, vertical = 4.dp).fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                // filter application status
+                FlowRow(Modifier.padding(
+                    horizontal = 10.dp, vertical = 4.dp).fillMaxWidth(),
                 ) {
-                    item {
-                        FilterChip(
-                            selected = selectedFilter == null,
-                            onClick = {
-                                selectedFilter = null
-                                onFilterChange(null)
-                            },
-                            label = { Text("All") }
-                        )
-                    }
-                    items(ApplicationStatus.entries.toTypedArray()) { status ->
+                    FilterChip(
+                        selected = selectedFilter == null,
+                        onClick = {
+                            selectedFilter = null
+                            onFilterChange(null)
+                        },
+                        label = { Text("All") }
+                    )
+                    ApplicationStatus.entries.forEach { status ->
                         FilterChip(
                             selected = selectedFilter == status,
                             onClick = {
@@ -103,7 +101,7 @@ fun ApplicationListScreen(
                                     ?: MaterialTheme.colorScheme.primary,
                                 labelColor = StatusColorMap[status] ?: MaterialTheme.colorScheme.onPrimary
                             ),
-                            label = { Text(status.name.split("(?<!^)(?=[A-Z])".toRegex()).first(), maxLines = 1, overflow = TextOverflow.Ellipsis) }
+                            label = { Text(status.name.split("(?<!^)(?=[A-Z])".toRegex()).first(), maxLines = 1) }
                         )
                     }
                 }
