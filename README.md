@@ -63,7 +63,7 @@ CareerCheer is a simple, user-friendly Android app designed to help students tra
 
 ## Team Pixel Python!
 
-- Sofia Ivann 
+<!-- - Sofia Ivann  -->
 - Juana Wong 
-- Akkeem Tyrell 
-- Baoying Liang Wu
+<!-- - Akkeem Tyrell  -->
+<!-- - Baoying Liang Wu -->
